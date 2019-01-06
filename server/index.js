@@ -20,7 +20,7 @@ app.use('/api', require('./api'));
 
 // Send index.html for any other requests
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, '../index.html'));
+  res.sendFile(path.join(__dirname, '../public/index.html'));
 });
 
 // Error handling
@@ -31,6 +31,6 @@ app.use((err, req, res, next) => {
 });
 
 const PORT = process.env.PORT || 8080;
-app.listen(port, () => {
+app.listen(PORT, () => {
   console.log(`Listening on port ${PORT}`);
 });
